@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 import model.entities.Computer;
 import model.entities.Task;
+import model.services.TaskService;
+import model.services.Tax;
 
 public class Program {
 
@@ -17,20 +19,27 @@ public class Program {
 		int a = sc.nextInt();
 		System.out.println();
 		System.out.print("Services avaliable: "
-					  +"\nCleaning(basic)  Cleaning(complete) "
+					  +"\nCleaning(basic)  Clea	ning(complete) "
 					  +"\nBuild            Update(driver or BIOS)");
 		System.out.println();
 		System.out.println();
 		sc.nextLine();
 		
 		ArrayList<String> list = new ArrayList<String>(a);
+		int size = list.size();
 		for(int i=0;i<a;i++) {
 		System.out.print("Enter the " + (i+1) + " service: ");
 		list.add(sc.nextLine());
 		}
 		Task task = new Task(list, new Computer(name));
 		
-		
+		System.out.println();
+		double price[] = null;
+		for(int i=0;i<list.size();i++) {
+			System.out.print("Enter the " + (i+1) + " service price: ");
+			price[i] = sc.nextDouble();
+		}
+		TaskService ts = new TaskService(price, size, new Tax());
 		
 		
 		
