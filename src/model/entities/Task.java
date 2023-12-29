@@ -38,6 +38,11 @@ public class Task {
 	public void setComputer(Computer computer) {
 		this.computer = computer;
 	}
+
+	@Override
+	public String toString() {
+		return "Task [services=" + services + ", invoice=" + invoice + ", computer=" + computer + "]";
+	}
 	
 	
 	

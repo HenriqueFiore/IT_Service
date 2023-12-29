@@ -19,7 +19,7 @@ public class Program {
 		int a = sc.nextInt();
 		System.out.println();
 		System.out.print("Services avaliable: "
-					  +"\nCleaning(basic)  Clea	ning(complete) "
+					  +"\nCleaning(basic)  Cleaning(complete) "
 					  +"\nBuild            Update(driver or BIOS)");
 		System.out.println();
 		System.out.println();
@@ -34,10 +34,10 @@ public class Program {
 		Task task = new Task(list, new Computer(name));
 		
 		System.out.println();
-		double price[] = null;
+		double price = 0;
 		for(int i=0;i<list.size();i++) {
 			System.out.print("Enter the " + (i+1) + " service price: ");
-			price[i] = sc.nextDouble();
+			price+= sc.nextDouble();
 		}
 		TaskService ts = new TaskService(price, size, new Tax());
 		
