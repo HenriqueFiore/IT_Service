@@ -41,9 +41,12 @@ public class Program {
 		}
 		TaskService ts = new TaskService(price, size, new Tax());
 		
+		System.out.println();
+		System.out.println("Computer: " + task.getComputer().getName() + 
+				"\nServices: " + task.getServices().toString() +
+				"\nPrice: ");
 		
-		
-		
+		sc.close();
 	}
 
 }
