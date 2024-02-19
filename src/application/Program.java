@@ -26,11 +26,11 @@ public class Program {
 		sc.nextLine();
 		
 		ArrayList<String> list = new ArrayList<String>(a);
-		int size = list.size();
 		for(int i=0;i<a;i++) {
 		System.out.print("Enter the " + (i+1) + " service: ");
 		list.add(sc.nextLine());
 		}
+		int size = list.size();
 		Task task = new Task(list, new Computer(name));
 		
 		System.out.println();
@@ -40,11 +40,12 @@ public class Program {
 			price+= sc.nextDouble();
 		}
 		TaskService ts = new TaskService(price, size, new Tax());
+		ts.processInvoice(task);
 		
 		System.out.println();
 		System.out.println("Computer: " + task.getComputer().getName() + 
 				"\nServices: " + task.getServices().toString() +
-				"\nPrice: ");
+				"\nPrice: " + task.getInvoice().fullPrice());
 		
 		sc.close();
 	}
