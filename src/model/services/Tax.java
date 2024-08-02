@@ -11,5 +11,4 @@ public class Tax implements TaxService{
 			return 0;
 		}
 	}
-
 }

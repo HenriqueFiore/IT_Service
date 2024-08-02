@@ -45,6 +45,7 @@ public class Program {
 		System.out.println();
 		System.out.println("Computer: " + task.getComputer().getName() + 
 				"\nServices: " + task.getServices().toString() +
+				"\nTax: " + task.getInvoice().getTax() + "%"+
 				"\nPrice: " + task.getInvoice().fullPrice());
 		
 		sc.close();
